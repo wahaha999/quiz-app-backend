@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "b389398b-0216-4300-8f76-12d6d16f8b54",
+		"name": "Quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29993613"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"WilliamOkazaki\",\r\n    \"email\": \"scamp121206@gmail.com\",\r\n    \"password\": \"Wahaha999!@#$%\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/auth/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"WilliamOkazaki\",\r\n    \"password\": \"Wahaha999!@#$%\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/auth/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Question",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 8670678b95d5469b7d94c36a214d8d5494f50a7fd0cb6b85a93fc3e4a41245c2",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lesson\": 2,\r\n    \"question\": \"Which countries are in America\",\r\n    \"is_multi\": true,\r\n    \"choice\": [\r\n        {\r\n            \"choice_text\": \"US\",\r\n            \"is_correct\": true\r\n        },\r\n        {\r\n            \"choice_text\": \"Austria\",\r\n            \"is_correct\": false\r\n        },\r\n        {\r\n            \"choice_text\": \"Brazil\",\r\n            \"is_correct\": true\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/question/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Question list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 8670678b95d5469b7d94c36a214d8d5494f50a7fd0cb6b85a93fc3e4a41245c2",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/questions/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Assessment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 8670678b95d5469b7d94c36a214d8d5494f50a7fd0cb6b85a93fc3e4a41245c2",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:8000/api/result/"
+			},
+			"response": []
+		}
+	]
+}
